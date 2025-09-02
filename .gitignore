@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.nox/
+.eggs/
+*.egg-info/
+*.egg
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local config
+.env
+config.yaml

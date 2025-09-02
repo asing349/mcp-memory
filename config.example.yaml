@@ -1,0 +1,8 @@
+db_path: ~/.mcp/memory.db
+redis_url: redis://localhost:6379/0
+embedding_model: all-MiniLM-L6-v2
+categories: [work, personal, technical, contacts, finance, other]
+rrf_k: 60
+recency_half_life_days: 14
+enable_background: false
+user_id: default
