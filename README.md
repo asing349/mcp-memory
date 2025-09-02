@@ -99,3 +99,33 @@ curl -X POST http://127.0.0.1:8000/tools/forget_memory \
 ```bash
 curl http://127.0.0.1:8000/tools/memory_health | jq
 ```
+
+## Connecting with MCP Clients (e.g., Claude Desktop)
+
+In addition to the FastAPI server, this project includes an MCP (Modular Command Protocol) server for direct integration with compatible clients like the Claude desktop app. This allows you to use the memory tools directly within your AI assistant.
+
+### Running the MCP Server
+
+The MCP server communicates over standard input/output (stdio). To run it, first ensure you have installed the project dependencies in your virtual environment. It's recommended to install the project in editable mode to ensure the module is correctly recognized:
+
+```bash
+pip install -e .
+```
+
+Then, you can run the MCP server with the following command:
+
+```bash
+python -m src.mcp_memory.mcp_server
+```
+
+### Connecting the Tool
+
+In your MCP client (e.g., the Claude desktop app), you would typically navigate to the settings for custom tools or agents. Add a new tool and provide the full command to execute the server.
+
+For example, you might configure the tool with a command like:
+
+```
+/path/to/your/project/.venv/bin/python -m src.mcp_memory.mcp_server
+```
+
+Make sure to use the absolute path to the Python executable within your project\'s virtual environment to ensure it runs with the correct dependencies. Once configured, the `store_memory`, `recall_memory`, and other tools will become available within your client.
